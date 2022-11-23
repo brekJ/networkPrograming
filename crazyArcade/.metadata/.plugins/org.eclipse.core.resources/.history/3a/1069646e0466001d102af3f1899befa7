@@ -1,0 +1,93 @@
+package client;
+
+import java.awt.EventQueue;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+
+import javax.swing.JFrame;
+import javax.swing.JPanel;
+import javax.swing.JTextField;
+import javax.swing.SwingConstants;
+import javax.swing.border.EmptyBorder;
+import java.awt.BorderLayout;
+import javax.swing.UIManager;
+import java.awt.Color;
+
+import javax.swing.ImageIcon;
+import javax.swing.JButton;
+import javax.swing.JDesktopPane;
+import javax.swing.JLabel;
+
+public class client extends JFrame {
+
+	/**
+	 * Launch the application.
+	 */
+	private JLabel contentPane, lblNewLabel;
+	private JTextField tfUsername, tfPassword;
+	private JButton btnJoin, btnLogin;
+	
+	public static void main(String[] args) {
+		EventQueue.invokeLater(new Runnable() {
+			public void run() {
+				try {
+					client frame = new client();
+					frame.setVisible(true);
+				} catch (Exception e) {
+					e.printStackTrace();
+				}
+			}
+		});
+	}
+	public client() {
+		renderUI();
+	}
+
+	/**
+	 * Create the frame.
+	 */
+	public void renderUI() {
+		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		setBounds(100, 100, 400, 300);
+
+		setSize(600, 420);
+		setLocationRelativeTo(null);
+
+		contentPane = new JLabel(new ImageIcon("images/login_scene_bg.bmp"));
+		// contentPane = new JPanel();
+		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
+		setContentPane(contentPane);
+		contentPane.setLayout(null);
+
+		tfUsername = new JTextField();
+		tfUsername.setText("sui");
+		tfUsername.setHorizontalAlignment(SwingConstants.CENTER);
+		tfUsername.setBounds(551, 626, 263, 35);
+		contentPane.add(tfUsername);
+		tfUsername.setColumns(10);
+
+		tfPassword = new JTextField();
+		tfPassword.setText("123");
+		tfPassword.setHorizontalAlignment(SwingConstants.CENTER);
+		tfPassword.setColumns(10);
+		tfPassword.setBounds(551, 670, 263, 35);
+		contentPane.add(tfPassword);
+
+		btnLogin = new JButton(new ImageIcon("images/log.png"));
+		btnLogin.setBounds(627, 731, 182, 54);
+		contentPane.add(btnLogin);
+
+		btnJoin = new JButton(new ImageIcon("images/join.png"));
+		btnJoin.setBounds(385, 731, 182, 54);
+		contentPane.add(btnJoin);
+
+		lblNewLabel = new JLabel(new ImageIcon("images/insert.png"));
+		lblNewLabel.setBackground(Color.ORANGE);
+		lblNewLabel.setForeground(Color.BLACK);
+		lblNewLabel.setBounds(312, 529, 568, 273);
+		contentPane.add(lblNewLabel);
+		setVisible(true);
+	}
+
+}
+

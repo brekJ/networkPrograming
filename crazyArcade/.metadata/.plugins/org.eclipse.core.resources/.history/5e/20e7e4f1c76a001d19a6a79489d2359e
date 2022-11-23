@@ -1,0 +1,31 @@
+/**
+ * 
+ */
+/**
+ * @author 능금매
+ *
+ */
+module client {
+	requires java.desktop;
+	requires java.base;
+}
+module dao{
+	requires java.desktop;
+	requires java.base;
+}
+module frame{
+	requires java.desktop;
+	requires java.base;
+}
+module map{
+	requires java.desktop;
+	requires java.base;
+}
+module models{
+	requires java.desktop;
+	requires java.base;
+}
+module server{
+	requires java.desktop;
+	requires java.base;
+}

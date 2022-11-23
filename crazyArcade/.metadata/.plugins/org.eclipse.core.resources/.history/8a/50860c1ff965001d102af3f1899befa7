@@ -1,0 +1,10 @@
+/**
+ * 
+ */
+/**
+ * @author 능금매
+ *
+ */
+module crazyArcade {
+	requires java.desktop;
+}

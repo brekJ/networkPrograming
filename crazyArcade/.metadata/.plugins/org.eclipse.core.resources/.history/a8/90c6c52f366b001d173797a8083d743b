@@ -1,0 +1,68 @@
+package server;
+
+import java.awt.BorderLayout;
+import java.awt.EventQueue;
+import java.net.ServerSocket;
+import java.net.Socket;
+import java.util.Vector;
+
+import javax.swing.JFrame;
+import javax.swing.JLabel;
+import javax.swing.JPanel;
+import javax.swing.JTextArea;
+import javax.swing.JTextField;
+import javax.swing.border.EmptyBorder;
+import javax.swing.JScrollPane;
+
+public class server extends JFrame {
+
+	private static final long serialVersionUID = 1L;
+	private JPanel contentPane;
+	JTextArea textArea;
+	private JTextField txtPortNumber;
+
+	private ServerSocket socket; // 서버소켓
+	private Socket client_socket; // accept() 에서 생성된 client 소켓
+	private Vector UserVec = new Vector(); // 연결된 사용자를 저장할 벡터
+	private static final int BUF_LEN = 128; // Windows 처럼 BUF_LEN 을 정의
+
+	
+	public static void main(String[] args) {
+		EventQueue.invokeLater(new Runnable() {
+			public void run() {
+				try {
+					server frame = new server();
+					frame.setVisible(true);
+				} catch (Exception e) {
+					e.printStackTrace();
+				}
+			}
+		});
+	}
+
+	/**
+	 * Create the frame.
+	 */
+	public server() {
+		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		setBounds(100, 100, 450, 300);
+		contentPane = new JPanel();
+		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
+		setContentPane(contentPane);
+		contentPane.setLayout(null);
+		
+		JScrollPane scrollPane = new JScrollPane();
+		scrollPane.setBounds(48, 40, 346, 171);
+		contentPane.add(scrollPane);
+		
+		textArea = new JTextArea();
+		textArea.setEditable(false);
+		scrollPane.setViewportView(textArea);
+		
+		JLabel lblNewLabel = new JLabel("Port Number");
+		lblNewLabel.setBounds(13, 318, 87, 26);
+		contentPane.add(lblNewLabel);
+		
+		
+	}
+}

@@ -1,0 +1,5 @@
+INDEX VERSION 1.131+C:\crazyArcade\.metadata\.plugins\org.eclipse.jdt.core
+262142283.index
+1865797976.index
+2120608790.index
+2461411560.index
